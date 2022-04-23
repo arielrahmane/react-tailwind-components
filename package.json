@@ -8,15 +8,17 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "check:eslint": "eslint --max-warnings 0 . src/**/*.*",
-    "check:fix": "yarn check:eslint --fix"
+    "check:prettier": "prettier --check .",
+    "eslint:fix": "yarn check:eslint --fix",
+    "prettier:fix": "yarn check:prettier --write"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
-    "web-vitals": "^2.1.0",
-    "@testing-library/jest-dom": "^5.14.1"
+    "web-vitals": "^2.1.0"
   },
   "devDependencies": {
     "@testing-library/react": "^13.0.0",
@@ -35,6 +37,8 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-tailwindcss": "^3.5.0",
     "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.10",
     "tailwindcss": "^3.0.24"
   },
   "eslintConfig": {

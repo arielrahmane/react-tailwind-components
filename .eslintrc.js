@@ -16,11 +16,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'tailwindcss',
-  ],
+  plugins: ['react', '@typescript-eslint', 'tailwindcss'],
   rules: {
     'import/extensions': [
       'error',
@@ -32,9 +28,24 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'always-multiline',
+        exports: 'never',
+        functions: 'never',
+      },
+    ],
+    'object-curly-newline': 'off',
+    'tailwindcss/classnames-order': 'off',
   },
   settings: {
     'import/resolver': {
