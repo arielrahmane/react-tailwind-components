@@ -18,6 +18,9 @@ jobs:
           node-version: '16.13.0'
           cache: yarn
 
+      - name: Install modules
+        run: yarn
+
       - name: check
         run: |
           yarn run check:format
