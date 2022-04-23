@@ -9,8 +9,8 @@
     "eject": "react-scripts eject",
     "check:eslint": "eslint --max-warnings 0 . src/**/*.*",
     "check:prettier": "prettier --check .",
-    "eslint:fix": "yarn check:eslint --fix",
-    "prettier:fix": "yarn check:prettier --write"
+    "check:format": "yarn check:eslint && yarn check:prettier",
+    "format:fix": "yarn check:eslint --fix && yarn check:prettier --write"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
