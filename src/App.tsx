@@ -2,10 +2,8 @@ import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline bg-blue-500">
-        Hello world!
-      </h1>
+    <div>
+      <h1 className="bg-blue-500 text-3xl font-bold underline">Hello world!</h1>
     </div>
   );
 }
