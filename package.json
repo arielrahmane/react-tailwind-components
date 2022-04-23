@@ -9,7 +9,8 @@
     "eject": "react-scripts eject",
     "check:eslint": "eslint --max-warnings 0 . src/**/*.*",
     "check:prettier": "prettier --check .",
-    "check:format": "yarn check:eslint && yarn check:prettier",
+    "check:tsc": "tsc --noEmit",
+    "check:format": "yarn check:eslint && yarn check:prettier && yarn check:tsc",
     "format:fix": "yarn check:eslint --fix && yarn check:prettier --write"
   },
   "dependencies": {

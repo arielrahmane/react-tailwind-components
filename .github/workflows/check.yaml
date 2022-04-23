@@ -1,0 +1,23 @@
+name: Check Lint, Prettify & Compile TS
+
+on: pull_request
+
+concurrency:
+  group: check-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.13.0'
+          cache: yarn
+
+      - name: check
+        run: |
+          yarn run check:format
