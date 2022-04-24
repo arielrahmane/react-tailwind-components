@@ -1,9 +1,30 @@
 import React from 'react';
+import { N1, N1Item, N1Props } from './components/Navbars/N1';
+
+const navbarItems: N1Item[] = [
+  {
+    name: 'Pictures',
+    href: 'pictures',
+  },
+  {
+    name: 'Item2',
+  },
+];
+
+const navbarProps: N1Props = {
+  items: navbarItems,
+  heading: 'Navbar Test',
+  backgroundColor: 'bg-amber-500',
+};
 
 function App() {
   return (
     <div>
-      <h1 className="bg-blue-500 text-3xl font-bold underline">Hello world!</h1>
+      <N1
+        items={navbarProps.items}
+        heading={navbarProps.heading}
+        backgroundColor={navbarProps.backgroundColor}
+      />
     </div>
   );
 }
