@@ -33,7 +33,7 @@ export function N1(props: N1Props) {
     <div
       className={classNames(
         backgroundColor,
-        'relative flex w-full grow flex-row px-2 py-3'
+        'relative flex w-full grow flex-row px-2 py-3 overflow-hidden'
       )}
     >
       <div className="relative text-white lg:hidden">
@@ -46,7 +46,7 @@ export function N1(props: N1Props) {
           className={classNames(
             textColor,
             textCase,
-            'inline-block whitespace-nowrap text-lg font-bold leading-relaxed'
+            'inline-block text-lg font-bold leading-relaxed'
           )}
         >
           {heading}
