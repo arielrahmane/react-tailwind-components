@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { MenuIcon } from '@heroicons/react/outline';
-import React from 'react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import React, { useState } from 'react';
 
 export interface N1Item {
   label: string;
@@ -11,6 +11,8 @@ export interface N1Props {
   /** Mandatory props */
   items: N1Item[];
   heading: string;
+  onMenuOpen: () => void;
+  onMenuClose: () => void;
   /** Optional Props */
   specialItems?: N1Item[];
   /** Styling props */
@@ -27,7 +29,23 @@ const defaultProps = {
 };
 
 export function N1(props: N1Props) {
-  const { items, specialItems, heading, backgroundColor, textColor, textCase } = props;
+  const {
+    items,
+    specialItems,
+    heading,
+    backgroundColor,
+    textColor,
+    textCase,
+    onMenuClose,
+    onMenuOpen,
+  } = props;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onMenuClick = () => {
+    if (isMenuOpen) onMenuClose();
+    else onMenuOpen();
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div
@@ -36,9 +54,16 @@ export function N1(props: N1Props) {
         'relative flex w-full grow flex-row overflow-hidden px-2 py-3'
       )}
     >
-      <div className="relative text-white lg:hidden">
-        <MenuIcon className="h-12 w-12 py-2" />
-      </div>
+      <button
+        type="button"
+        className="relative text-white lg:hidden"
+        onClick={() => onMenuClick()}
+      >
+        <span>
+          {!isMenuOpen && <MenuIcon className="h-12 w-12 py-2" />}
+          {isMenuOpen && <XIcon className="h-12 w-12 py-2" />}
+        </span>
+      </button>
 
       {/* Heading */}
       <div className="relative mr-4 ml-10 py-2">
