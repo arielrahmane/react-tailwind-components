@@ -33,11 +33,11 @@ export function N1(props: N1Props) {
     <div
       className={classNames(
         backgroundColor,
-        'relative flex w-full grow flex-row px-2 py-3 overflow-hidden'
+        'relative flex w-full grow flex-row overflow-hidden px-2 py-3'
       )}
     >
       <div className="relative text-white lg:hidden">
-        <MenuIcon className="py-2 w-12 h-12" />
+        <MenuIcon className="h-12 w-12 py-2" />
       </div>
 
       {/* Heading */}
@@ -54,15 +54,15 @@ export function N1(props: N1Props) {
       </div>
 
       {/* Items */}
-      <div className="hidden lg:ml-10 lg:flex lg:items-center py-2">
+      <div className="hidden py-2 lg:ml-10 lg:flex lg:items-center">
         <ul className="ml-auto flex list-none flex-row">
           {items.map((item: N1Item) => (
-            <li key={item.label}>
+            <li key={item.label} className="flex items-center">
               <a
                 className={classNames(
                   textColor,
                   textCase,
-                  'ml-5 cursor-pointer items-center px-3 py-2 text-xs font-bold leading-snug hover:opacity-75'
+                  'ml-5 cursor-pointer items-center px-3 text-xs font-bold leading-snug hover:opacity-75'
                 )}
                 href={item.href}
               >
@@ -76,14 +76,14 @@ export function N1(props: N1Props) {
       {/* Special Items */}
       {specialItems !== undefined && specialItems.length > 0 && (
         <div className="mr-10 hidden grow items-center py-2 sm:flex">
-          <ul className="ml-auto flex list-none flex-row">
+          <ul className="ml-auto flex list-none flex-row items-center">
             {specialItems.map((item: N1Item) => (
-              <li key={item.label}>
+              <li key={item.label} className="flex items-center">
                 <a
                   className={classNames(
                     textColor,
                     textCase,
-                    'ml-5 cursor-pointer items-center px-3 py-2 text-xs font-bold leading-snug hover:opacity-75'
+                    'ml-5 cursor-pointer px-3 text-xs font-bold leading-snug hover:opacity-75'
                   )}
                   href={item.href}
                 >
