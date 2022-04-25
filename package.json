@@ -11,9 +11,10 @@
     "check:prettier": "prettier --check .",
     "check:tsc": "tsc --noEmit",
     "check:format": "yarn check:eslint && yarn check:prettier && yarn check:tsc",
-    "format:fix": "yarn check:eslint --fix && yarn check:prettier --write"
+    "format:fix": "yarn check:prettier --write && yarn check:eslint --fix"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.14.1",
     "classnames": "^2.3.1",
     "react": "^18.0.0",
